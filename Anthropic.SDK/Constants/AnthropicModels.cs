@@ -26,16 +26,16 @@
         /// Claude 3 Opus
         /// </summary>
         public const string Claude3Opus = "claude-3-opus-20240229";
-        
+
         /// <summary>
         /// Claude 3 Sonnet
         /// </summary>
         public const string Claude3Sonnet = "claude-3-sonnet-20240229";
-        
+
         /// <summary>
         /// Claude 3.5 Sonnet
         /// </summary>
-        public const string Claude35Sonnet = "claude-3-5-sonnet-20240620";
+        public const string Claude35Sonnet = "claude-3-5-sonnet-latest";
 
         /// <summary>
         /// Claude 3 Haiku

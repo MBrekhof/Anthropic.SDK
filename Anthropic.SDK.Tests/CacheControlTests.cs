@@ -58,12 +58,12 @@ namespace Anthropic.SDK.Tests
 
             Debug.WriteLine(res.Message);
             Assert.IsTrue(res.Usage.CacheCreationInputTokens > 0 || res.Usage.CacheReadInputTokens > 0);
-
+            Thread.Sleep(3000);
             messages.Add(res.Message);
             messages.Add(new Message(RoleType.User, "Who is the main character and how old is he?"));
 
             var res2 = await client.Messages.GetClaudeMessageAsync(parameters);
-
+            Thread.Sleep(3000);
             Assert.IsTrue(res2.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res2.Message.ToString());
@@ -73,7 +73,7 @@ namespace Anthropic.SDK.Tests
             messages.Add(new Message(RoleType.User, "Who is the main antagonist and how old is he?"));
 
             var res3 = await client.Messages.GetClaudeMessageAsync(parameters);
-
+            Thread.Sleep(3000);
             Assert.IsTrue(res3.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res3.Message.ToString());
@@ -83,7 +83,7 @@ namespace Anthropic.SDK.Tests
             messages.Add(new Message(RoleType.User, "What year is the book set in?"));
 
             var res4 = await client.Messages.GetClaudeMessageAsync(parameters);
-
+            Thread.Sleep(3000);
             Assert.IsTrue(res4.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res4.Message.ToString());
@@ -138,7 +138,7 @@ namespace Anthropic.SDK.Tests
             Assert.IsTrue(res.Usage.CacheCreationInputTokens > 0 ||
                           res.Usage.CacheReadInputTokens > 0);
 
-            
+            Thread.Sleep(3000);
 
         }
 
@@ -185,7 +185,7 @@ namespace Anthropic.SDK.Tests
             Debug.WriteLine(res.Message);
             Assert.IsTrue(res.Usage.CacheCreationInputTokens > 0 || res.Usage.CacheReadInputTokens > 0);
 
-
+            Thread.Sleep(3000);
 
         }
 
@@ -235,7 +235,7 @@ namespace Anthropic.SDK.Tests
 
             Assert.IsTrue(messageResponses.First().StreamStartMessage.Usage.CacheCreationInputTokens > 0 ||
                           messageResponses.First().StreamStartMessage.Usage.CacheReadInputTokens > 0);
-
+            Thread.Sleep(3000);
             messages.Add(new Message(messageResponses));
             messages.Add(new Message(RoleType.User, "Who is the main character and how old is he?"));
 
@@ -244,7 +244,7 @@ namespace Anthropic.SDK.Tests
             Assert.IsTrue(res2.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res2.Message.ToString());
-
+            Thread.Sleep(3000);
             //message 3
             messages.Add(res2.Message);
             messages.Add(new Message(RoleType.User, "Who is the main antagonist and how old is he?"));
@@ -254,7 +254,7 @@ namespace Anthropic.SDK.Tests
             Assert.IsTrue(res3.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res3.Message.ToString());
-
+            Thread.Sleep(3000);
             //message 4
             messages.Add(res3.Message);
             messages.Add(new Message(RoleType.User, "What year is the book set in?"));
@@ -366,7 +366,7 @@ namespace Anthropic.SDK.Tests
 
             var json = toolResult.Input.ToJsonString();
             Debug.WriteLine(json);
-
+            Thread.Sleep(3000);
         }
 
         [TestMethod]
@@ -404,6 +404,7 @@ namespace Anthropic.SDK.Tests
             var res = await client.Messages.GetClaudeMessageAsync(parameters);
 
             Debug.WriteLine(res.Message);
+            Thread.Sleep(3000);
         }
 
         [TestMethod]
@@ -442,6 +443,7 @@ namespace Anthropic.SDK.Tests
             var res = await client.Messages.GetClaudeMessageAsync(parameters);
 
             Debug.WriteLine(res.Message);
+            Thread.Sleep(3000);
         }
 
         [TestMethod]
@@ -463,6 +465,7 @@ namespace Anthropic.SDK.Tests
             var res = await client.Messages.GetClaudeMessageAsync(parameters);
             Assert.IsNotNull(res.Message.ToString());
             Assert.IsTrue(res.Usage.CacheCreationInputTokens == 0);
+            Thread.Sleep(3000);
         }
 
         [TestMethod]
@@ -500,7 +503,7 @@ namespace Anthropic.SDK.Tests
                 PromptCaching = PromptCacheType.FineGrained
             };
             var res = await client.Messages.GetClaudeMessageAsync(parameters);
-
+            Thread.Sleep(3000);
             Debug.WriteLine(res.Message);
             Assert.IsTrue(res.Usage.CacheCreationInputTokens > 0 || res.Usage.CacheReadInputTokens > 0);
 
@@ -515,7 +518,7 @@ namespace Anthropic.SDK.Tests
             Assert.IsTrue(res2.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res2.Message.ToString());
-
+            Thread.Sleep(3000);
             //message 3
             messages.Add(res2.Message);
             messages.Add(new Message(RoleType.User, "Who is the main antagonist and how old is he?"));
@@ -525,7 +528,7 @@ namespace Anthropic.SDK.Tests
             Assert.IsTrue(res3.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res3.Message.ToString());
-
+            Thread.Sleep(3000);
             //message 4
             messages.Add(res3.Message);
             messages.Add(new Message(RoleType.User, "What year is the book set in?"));
@@ -535,7 +538,7 @@ namespace Anthropic.SDK.Tests
             Assert.IsTrue(res4.Usage.CacheReadInputTokens > 0);
 
             Assert.IsNotNull(res4.Message.ToString());
-
+            Thread.Sleep(3000);
         }
     }
 
